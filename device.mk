@@ -60,27 +60,28 @@ PRODUCT_PACKAGES += \
 
 # idc files
 PRODUCT_COPY_FILES += \
-    device/htc/glacier/proprietary/usr/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc \
-    device/htc/glacier/proprietary/usr/idc/qwerty.idc:system/usr/idc/qwerty.idc \
-    device/htc/glacier/proprietary/usr/idc/qwerty2.idc:system/usr/idc/qwerty2.idc \
-    device/htc/glacier/proprietary/usr/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
-   # device/htc/glacier/proprietary/idc/curcial-oj.idc:system/usr/idc/curcial-oj.idc 
+    device/htc/glacier/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc \
+    device/htc/glacier/idc/qwerty.idc:system/usr/idc/qwerty.idc \
+    device/htc/glacier/idc/qwerty2.idc:system/usr/idc/qwerty2.idc \
+    device/htc/glacier/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
+    device/htc/glacier/idc/curcial-oj.idc:system/usr/idc/curcial-oj.idc 
 
 # Keychars
 PRODUCT_COPY_FILES += \
-    device/htc/glacier/proprietary/usr/keychars/synaptics-rmi-touchscreen.kcm.bin:system/usr/keychars/synaptics-rmi-touchscreen.kcm.bin \
-    device/htc/glacier/proprietary/usr/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
-    device/htc/glacier/proprietary/usr/keychars/qwerty2.kcm:system/usr/keychars/qwerty2.kcm \
-    device/htc/glacier/proprietary/usr/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
-    device/htc/glacier/proprietary/usr/keychars/qwerty.kcm:system/usr/keychars/qwerty.kcm \
-    device/htc/glacier/proprietary/usr/keychars/glacier-keypad.kcm.bin:system/usr/keychars/glacier-keypad.kcm.bin 
+    device/htc/glacier/keychars/synaptics-rmi-touchscreen.kcm.bin:system/usr/keychars/synaptics-rmi-touchscreen.kcm.bin \
+    device/htc/glacier/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
+    device/htc/glacier/keychars/qwerty2.kcm:system/usr/keychars/qwerty2.kcm \
+    device/htc/glacier/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
+    device/htc/glacier/keychars/qwerty.kcm:system/usr/keychars/qwerty.kcm \
+    device/htc/glacier/keychars/glacier-keypad.kcm.bin:system/usr/keychars/glacier-keypad.kcm.bin 
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    device/htc/glacier/proprietary/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    device/htc/glacier/proprietary/usr/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
-    device/htc/glacier/proprietary/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
-    device/htc/glacier/proprietary/usr/keylayout/glacier-keypad.kl:system/usr/keylayout/glacier-keypad.kl 
+    device/htc/glacier/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+    device/htc/glacier/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
+    device/htc/glacier/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
+    device/htc/glacier/keylayout/glacier-keypad.kl:system/usr/keylayout/glacier-keypad.kl
+
 
 # T-MOBILE CERTS
 PRODUCT_COPY_FILES += \
