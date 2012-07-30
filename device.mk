@@ -95,7 +95,10 @@ PRODUCT_COPY_FILES += \
     device/htc/glacier/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
     device/htc/glacier/firmware/default.acdb:system/etc/firmware/default.acdb \
     device/htc/glacier/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
-    device/htc/glacier/firmware/default_org_WA.acdb:system/etc/firmware/default_org_WA.acdb
+    device/htc/glacier/firmware/default_org_WA.acdb:system/etc/firmware/default_org_WA.acdb \
+    device/htc/glacier/firmware/A1026_CFG.csv:system/etc/A1026_CFG.csv \
+    device/htc/glacier/firmware/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \
+    device/htc/glacier/firmware/AdieHWCodec_WA.csv:system/etc/AdieHWCodec_WA.csv
 
 # Audio DSP Profiles
 PRODUCT_COPY_FILES += \
