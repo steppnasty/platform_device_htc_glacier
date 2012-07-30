@@ -181,19 +181,6 @@ PRODUCT_COPY_FILES += \
 # Kernel modules
 #PRODUCT_COPY_FILES += \
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/htc/msm7x30-common/msm7230/kernel
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
-
-PRODUCT_COPY_FILES += \
-    device/htc/msm7x30-common/msm7230/bcm4329.ko:system/lib/modules/bcm4329.ko \
-    device/htc/msm7x30-common/msm7230/qc_pcm_in.ko:system/lib/modules/qc_pcm_in.ko
-
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
 
