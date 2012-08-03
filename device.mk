@@ -179,7 +179,8 @@ PRODUCT_COPY_FILES += \
 
 # media config xml file
 PRODUCT_COPY_FILES += \
-    device/htc/msm7x30-common/media_profiles.xml:system/etc/media_profiles.xml
+    device/htc/glacier/media_profiles.xml:system/etc/media_profiles.xml \
+
 
 # Kernel modules
 #PRODUCT_COPY_FILES += \

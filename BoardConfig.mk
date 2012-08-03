@@ -32,19 +32,19 @@ USE_CAMERA_STUB := true
 -include vendor/htc/glacier/BoardConfigVendor.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := glacier
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := glacier
+
+# Extra Params
+BOARD_NEEDS_MEMORYHEAPPMEM := true
+BOARD_USE_NEW_LIBRIL_HTC := true
+
+# Trackpad Support
+BOARD_USE_LEGACY_TRACKPAD := true
 
 BOARD_KERNEL_CMDLINE := no_console_suspend=1
 BOARD_KERNEL_RECOVERY_CMDLINE := $(BOARD_KERNEL_CMDLINE) msmsdcc_power_gpio=88
 BOARD_KERNEL_BASE := 0x4000000
 BOARD_KERNEL_PAGE_SIZE := 4096
-
-COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
-TARGET_USES_QCOM_LPA := true
-
-# Workaround for Glacier's broken overlay scaling
-#BOARD_OVERLAY_MINIFICATION_LIMIT := 2
-
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := glacier
 
 # cat /proc/emmc
 #dev:        size     erasesize name
@@ -65,7 +65,7 @@ BOARD_FLASH_BLOCK_SIZE := 262144
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 
-TARGET_KERNEL_CONFIG := talon_msm7230_defconfig
+TARGET_KERNEL_CONFIG := aospx_glacier_defconfig
 TARGET_KERNEL_SOURCE := kernel/msm7x30
 # TARGET_PREBUILT_KERNEL := device/htc/msm7x30-common/msm7230/kernel
 
@@ -88,3 +88,4 @@ BOARD_USE_LEGACY_TRACKPAD := true
 
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun0/file
+COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB
