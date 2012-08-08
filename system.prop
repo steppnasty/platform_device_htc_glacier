@@ -79,7 +79,3 @@ ro.kernel.android.checkjni=0
 ro.media.enc.jpeg.quality=100
 ro.media.dec.jpeg.memcap=8000000
 ro.media.enc.hprof.vid.bps=8000000
-
-# Audio
-#lpa.decode=true
-#lpa.use-stagefright=true
