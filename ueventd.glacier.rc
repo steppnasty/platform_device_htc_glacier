@@ -6,6 +6,7 @@
 /dev/smd* 0640 radio radio
 /dev/smd9 0600 system system
 /dev/tun 0640 vpn vpn
+/dev/ppp 0660 radio vpn
 
 #sensors
 /dev/akm8975_daemon 0640 compass system

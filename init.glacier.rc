@@ -29,6 +29,11 @@ on post-fs-data
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
 
+    # Allow system to have access to /dev/tun directory
+    mkdir /dev/tun 0770 system vpn
+    chown system vpn /dev/tun
+    chmod 0770 /dev/tun
+
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
 
@@ -119,6 +124,8 @@ on boot
     # Enable low memory killer to check file pages
     write /sys/module/lowmemorykiller/parameters/minfile 0,0,0,5120,5632,6144
     write /sys/module/lowmemorykiller/parameters/check_filepages 1
+
+    write /proc/sys/vm/min_free_kbytes 8192
 
     write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 90
     write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 50000
