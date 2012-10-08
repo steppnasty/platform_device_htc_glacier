@@ -95,13 +95,11 @@ PRODUCT_COPY_FILES += \
     device/htc/glacier/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd \
     device/htc/glacier/firmware/default.acdb:system/etc/firmware/default.acdb \
     device/htc/glacier/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
-    device/htc/glacier/firmware/default_org_WA.acdb:system/etc/firmware/default_org_WA.acdb \
-    device/htc/glacier/firmware/A1026_CFG.csv:system/etc/A1026_CFG.csv \
-    device/htc/glacier/firmware/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \
-    device/htc/glacier/firmware/AdieHWCodec_WA.csv:system/etc/AdieHWCodec_WA.csv
+    device/htc/glacier/firmware/default_org_WA.acdb:system/etc/firmware/default_org_WA.acdb 
 
 # Audio DSP Profiles
 PRODUCT_COPY_FILES += \
+    device/htc/glacier/dsp/A1026_CFG.csv:system/etc/A1026_CFG.csv \
     device/htc/glacier/dsp/AIC3254_REG.csv:system/etc/AIC3254_REG.csv \
     device/htc/glacier/dsp/AIC3254_REG_XD.csv:system/etc/AIC3254_REG_XD.csv \
     device/htc/glacier/dsp/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \
@@ -179,8 +177,7 @@ PRODUCT_COPY_FILES += \
 
 # media config xml file
 PRODUCT_COPY_FILES += \
-    device/htc/glacier/media_profiles.xml:system/etc/media_profiles.xml \
-
+    device/htc/glacier/media_profiles.xml:system/etc/media_profiles.xml
 
 # Kernel modules
 #PRODUCT_COPY_FILES += \
