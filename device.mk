@@ -84,12 +84,9 @@ PRODUCT_COPY_FILES += \
     device/htc/glacier/keylayout/glacier-keypad.kl:system/usr/keylayout/glacier-keypad.kl
 
 
-# T-MOBILE CERTS
+# T-MOBILE CERT
 PRODUCT_COPY_FILES += \
     device/htc/glacier/prebuilt/etc/T-Mobile_USA_Root_CA.der:system/etc/T-Mobile_USA_Root_CA.der \
-    device/htc/glacier/prebuilt/etc/T-Mobile_USA_Intermediate_CA_01.der:/etc/T-Mobile_USA_Intermediate_CA_01.der \
-    device/htc/glacier/prebuilt/etc/T-Mobile_USA_Issuer_CA_01.der:/etc/T-Mobile_USA_Issuer_CA_01.der \
-    device/htc/glacier/prebuilt/etc/T-Mobile_USA_Issuer_CA_02.der:/etc/T-Mobile_USA_Issuer_CA_02.der
 
 # Firmware
 PRODUCT_COPY_FILES += \
