@@ -44,6 +44,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/glacier/overlay
 
+# Permissions
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
@@ -85,10 +86,10 @@ PRODUCT_COPY_FILES += \
 
 # T-MOBILE CERTS
 PRODUCT_COPY_FILES += \
-    device/htc/glacier/proprietary/etc/T-Mobile_USA_Root_CA.der:system/etc/T-Mobile_USA_Root_CA.der \
-    device/htc/glacier/proprietary/etc/T-Mobile_USA_Intermediate_CA_01.der:/etc/T-Mobile_USA_Intermediate_CA_01.der \
-    device/htc/glacier/proprietary/etc/T-Mobile_USA_Issuer_CA_01.der:/etc/T-Mobile_USA_Issuer_CA_01.der \
-    device/htc/glacier/proprietary/etc/T-Mobile_USA_Issuer_CA_02.der:/etc/T-Mobile_USA_Issuer_CA_02.der
+    device/htc/glacier/prebuilt/etc/T-Mobile_USA_Root_CA.der:system/etc/T-Mobile_USA_Root_CA.der \
+    device/htc/glacier/prebuilt/etc/T-Mobile_USA_Intermediate_CA_01.der:/etc/T-Mobile_USA_Intermediate_CA_01.der \
+    device/htc/glacier/prebuilt/etc/T-Mobile_USA_Issuer_CA_01.der:/etc/T-Mobile_USA_Issuer_CA_01.der \
+    device/htc/glacier/prebuilt/etc/T-Mobile_USA_Issuer_CA_02.der:/etc/T-Mobile_USA_Issuer_CA_02.der
 
 # Firmware
 PRODUCT_COPY_FILES += \
@@ -174,6 +175,10 @@ PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/nam/gps.conf
 
 PRODUCT_COPY_FILES += \
     device/htc/glacier/vold.fstab:system/etc/vold.fstab
+
+#Prebuilt cameraHAL
+PRODUCT_COPY_FILES += \
+    device/htc/glacier/prebuilt/lib/hw/camera.msm7x30.so:system/lib/hw/camera.msm7x30.so
 
 # media config xml file
 PRODUCT_COPY_FILES += \
