@@ -91,6 +91,9 @@ PRODUCT_COPY_FILES += \
 # Firmware
 PRODUCT_COPY_FILES += \
     device/htc/glacier/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd \
+    device/htc/glacier/firmware/fw_bcm4329.bin:/system/vendor/firmware/fw_bcm4329.bin \
+    device/htc/glacier/firmware/fw_bcm4329_apsta.bin:/system/vendor/firmware/fw_bcm4329_apsta.bin \
+    device/htc/glacier/firmware/fw_bcm4329_p2p.bin:/system/vendor/firmware/fw_bcm4329_p2p.bin \
     device/htc/glacier/firmware/default.acdb:system/etc/firmware/default.acdb \
     device/htc/glacier/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
     device/htc/glacier/firmware/default_org_WA.acdb:system/etc/firmware/default_org_WA.acdb 
