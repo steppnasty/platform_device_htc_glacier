@@ -180,6 +180,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/glacier/prebuilt/lib/hw/camera.msm7x30.so:system/lib/hw/camera.msm7x30.so
 
+# Additional older camera hacks
+PRODUCT_COPY_FILES += \
+    device/htc/glacier/prebuilt/app/CamFix.apk:system/app/CamFix.apk \
+    device/htc/glacier/prebuilt/app/FFCFix.apk:system/app/FFCFix.apk
+
 # media config xml file
 PRODUCT_COPY_FILES += \
     device/htc/glacier/media_profiles.xml:system/etc/media_profiles.xml
