@@ -104,6 +104,7 @@ PRODUCT_COPY_FILES += \
     device/htc/glacier/dsp/AIC3254_REG.csv:system/etc/AIC3254_REG.csv \
     device/htc/glacier/dsp/AIC3254_REG_XD.csv:system/etc/AIC3254_REG_XD.csv \
     device/htc/glacier/dsp/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \
+    device/htc/glacier/dsp/AdieHWCodec_WA.csv:system/etc/AdieHWCodec_WA.csv \
     device/htc/glacier/dsp/CodecDSPID.txt:system/etc/CodecDSPID.txt \
     device/htc/glacier/dsp/HP_Audio.csv:system/etc/HP_Audio.csv \
     device/htc/glacier/dsp/HP_Video.csv:system/etc/HP_Video.csv \
