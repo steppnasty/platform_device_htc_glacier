@@ -42,6 +42,9 @@ BOARD_KERNEL_PAGE_SIZE := 4096
 # Trackpad Support
 BOARD_USE_LEGACY_TRACKPAD := true
 
+# Use dirty hack to allow froyo libaudio
+BOARD_USE_KINETO_COMPATIBILITY := true
+
 BOARD_KERNEL_CMDLINE := no_console_suspend=1
 BOARD_KERNEL_RECOVERY_CMDLINE := $(BOARD_KERNEL_CMDLINE) msmsdcc_power_gpio=88
 BOARD_KERNEL_BASE := 0x4000000
