@@ -186,8 +186,9 @@ PRODUCT_COPY_FILES += \
     device/htc/glacier/prebuilt/app/CamFix.apk:system/app/CamFix.apk \
     device/htc/glacier/prebuilt/app/FFCFix.apk:system/app/FFCFix.apk
 
-# media config xml file
+# media config xml files
 PRODUCT_COPY_FILES += \
+    device/htc/glacier/media_codecs.xml:system/etc/media_codecs.xml \
     device/htc/glacier/media_profiles.xml:system/etc/media_profiles.xml
 
 # Kernel modules
