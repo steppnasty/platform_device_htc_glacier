@@ -191,6 +191,10 @@ PRODUCT_COPY_FILES += \
     device/htc/glacier/media_codecs.xml:system/etc/media_codecs.xml \
     device/htc/glacier/media_profiles.xml:system/etc/media_profiles.xml
 
+# bluetooth config file
+PRODUCT_COPY_FILES += \
+    device/htc/glacier/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
+
 # Kernel modules
 #PRODUCT_COPY_FILES += \
 
