@@ -177,10 +177,6 @@ PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/nam/gps.conf
 PRODUCT_COPY_FILES += \
     device/htc/glacier/vold.fstab:system/etc/vold.fstab
 
-#Prebuilt cameraHAL
-PRODUCT_COPY_FILES += \
-    device/htc/glacier/prebuilt/lib/hw/camera.msm7x30.so:system/lib/hw/camera.msm7x30.so
-
 # Additional older camera hacks
 PRODUCT_COPY_FILES += \
     device/htc/glacier/prebuilt/app/CamFix.apk:system/app/CamFix.apk \
