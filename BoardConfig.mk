@@ -88,3 +88,6 @@ TARGET_INVERSE_ROTATE := true
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun0/file
 HAVE_SELINUX := true
+
+#Ion
+TARGET_USES_ION := true
