@@ -37,7 +37,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enable_bypass=1 \
     dalvik.vm.lockprof.threshold=500 \
     dalvik.vm.dexopt-flags=m=y \
-    persist.hwc.mdpcomp.enable=true
+    persist.hwc.mdpcomp.enable=true \
+    camera.disable_zsl_mode=1
 
 # Override /proc/sys/vm/dirty_ratio on UMS
 PRODUCT_PROPERTY_OVERRIDES += \
