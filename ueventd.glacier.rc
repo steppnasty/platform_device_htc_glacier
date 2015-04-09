@@ -17,9 +17,11 @@
 /dev/gemini0 0660 system camera
 /dev/msm_camera/* 0660 system camera
 /dev/pmem_camera* 0660 system camera
-/dev/video* 0660 system camera
 /dev/msm_vidc* 0660 system graphics
 /dev/ion* 0664 system system
+/dev/video* 0660 system camera
+/dev/media* 0660 system camera
+/dev/v4l-subdev* 0660 system camera
 
 #audio
 /dev/htc-acdb 0660 system audio
