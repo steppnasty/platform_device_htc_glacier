@@ -91,3 +91,6 @@ HAVE_SELINUX := true
 
 #Ion
 TARGET_USES_ION := true
+
+#mm-open-daemon
+TARGET_USE_MM_OPEN_DAEMON := true
