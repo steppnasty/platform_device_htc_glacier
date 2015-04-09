@@ -180,9 +180,9 @@ PRODUCT_COPY_FILES += \
     device/htc/glacier/vold.fstab:system/etc/vold.fstab
 
 # Additional older camera hacks
-# PRODUCT_COPY_FILES += \
-#    device/htc/glacier/prebuilt/app/CamFix.apk:system/app/CamFix.apk \
-#    device/htc/glacier/prebuilt/app/FFCFix.apk:system/app/FFCFix.apk
+PRODUCT_COPY_FILES += \
+    device/htc/glacier/prebuilt/app/CamFix.apk:system/app/CamFix.apk \
+    device/htc/glacier/prebuilt/app/FFCFix.apk:system/app/FFCFix.apk
 
 # media config xml files
 PRODUCT_COPY_FILES += \
