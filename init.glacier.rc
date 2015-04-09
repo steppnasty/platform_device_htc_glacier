@@ -188,6 +188,13 @@ service udhcpd /system/bin/udhcpd
     disabled
     oneshot
 
+service qcamerasvr /system/bin/mm_daemon
+    class main
+    user camera
+    group camera system inet input
+    disabled
+    oneshot
+
 service netsharing_on /system/bin/netsharing net on
     class main
     disabled
