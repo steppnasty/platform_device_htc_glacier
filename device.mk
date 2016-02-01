@@ -40,6 +40,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true \
     camera.disable_zsl_mode=1
 
+PRODUCT_COPY_FILES += \
+    device/htc/glacier/audio_policy.conf:system/etc/audio_policy.conf
+
 # Override /proc/sys/vm/dirty_ratio on UMS
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20
