@@ -182,11 +182,6 @@ PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/nam/gps.conf
 PRODUCT_COPY_FILES += \
     device/htc/glacier/vold.fstab:system/etc/vold.fstab
 
-# Additional older camera hacks
-PRODUCT_COPY_FILES += \
-    device/htc/glacier/prebuilt/app/CamFix.apk:system/app/CamFix.apk \
-    device/htc/glacier/prebuilt/app/FFCFix.apk:system/app/FFCFix.apk
-
 # media config xml files
 PRODUCT_COPY_FILES += \
     device/htc/glacier/media_codecs.xml:system/etc/media_codecs.xml \
