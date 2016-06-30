@@ -23,6 +23,9 @@
 # WARNING: This line must come *before* including the proprietary
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
+
+TARGET_ARCH := arm
+
 USE_CAMERA_STUB := false
 
 # inherit from common msm7x30
