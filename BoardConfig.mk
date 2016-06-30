@@ -93,6 +93,3 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun0/f
 
 #Ion
 TARGET_USES_ION := true
-
-#mm-open-daemon
-TARGET_USE_MM_OPEN_DAEMON := true
