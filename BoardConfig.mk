@@ -93,3 +93,6 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun0/f
 
 #Ion
 TARGET_USES_ION := true
+
+# RIL
+BOARD_USES_LEGACY_RIL := true
