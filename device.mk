@@ -24,6 +24,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/glacier/init.glacier.rc:root/init.glacier.rc \
+    device/htc/glacier/init.glacier.usb.rc:root/init.glacier.usb.rc \
     device/htc/glacier/ueventd.glacier.rc:root/ueventd.glacier.rc
 
 ## (2) Also get non-open-source GSM-specific aspects if available

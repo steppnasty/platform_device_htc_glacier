@@ -1,4 +1,4 @@
-import init.htc7x30.usb.rc
+import init.glacier.usb.rc
 
 on early-init
     export EXTERNAL_STORAGE /storage/sdcard0
@@ -228,6 +228,11 @@ on property:ro.build.tags=release-keys
 
 on property:ro.emmc=1
     start rmt_storage
+
+on property:service.adb.root=1
+    write /sys/class/android_usb/android0/enable 0
+    restart adbd
+    write /sys/class/android_usb/android0/enable 1
 
 on property:sys.radio.shutdown=true
     write /sys/devices/platform/rs300000a7.65536/force_sync 1
