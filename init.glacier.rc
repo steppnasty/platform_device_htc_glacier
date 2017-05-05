@@ -48,7 +48,7 @@ on boot
 
     chmod 0664 /sys/module/pm/parameters/idle_sleep_mode
 
-# allow system to modify ksm control files
+    # allow system to modify ksm control files
     chown root system /sys/kernel/mm/ksm/pages_to_scan
     chmod 0664 /sys/kernel/mm/ksm/pages_to_scan
     chown root system /sys/kernel/mm/ksm/sleep_millisecs
