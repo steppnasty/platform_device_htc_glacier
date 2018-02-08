@@ -42,6 +42,9 @@ char const*const GREEN_LED_FILE
 char const*const AMBER_LED_FILE
         = "/sys/class/leds/amber/brightness";
 
+char const*const BLUE_LED_FILE
+        = "/sys/class/leds/blue/brightness";
+
 char const*const BUTTON_FILE
         = "/sys/class/leds/button-backlight/brightness";
 
@@ -51,10 +54,14 @@ char const*const AMBER_BLINK_FILE
 char const*const GREEN_BLINK_FILE
         = "/sys/class/leds/green/blink";
 
+char const*const BLUE_BLINK_FILE
+        = "/sys/class/leds/blue/blink";
+
 char const*const LCD_BACKLIGHT_FILE
         = "/sys/class/leds/lcd-backlight/brightness";
 
 enum {
+    LED_BLUE,
     LED_AMBER,
     LED_GREEN,
     LED_BLANK,
@@ -105,21 +112,31 @@ static void set_speaker_light_locked(struct light_device_t *dev,
         color = LED_GREEN;
     if ((colorRGB >> 16) & 0xFF)
         color = LED_AMBER;
+    if (colorRGB & 0xFF)
+        color = LED_BLUE;
 
     switch (state->flashMode) {
     case LIGHT_FLASH_TIMED:
         switch (color) {
+        case LED_BLUE:
+            write_int(BLUE_BLINK_FILE, 4);
+            write_int(GREEN_LED_FILE, 0);
+            write_int(AMBER_LED_FILE, 0);
+            break;
         case LED_AMBER:
             write_int(AMBER_BLINK_FILE, 4);
             write_int(GREEN_LED_FILE, 0);
+            write_int(BLUE_LED_FILE, 0);
             break;
         case LED_GREEN:
             write_int(GREEN_BLINK_FILE, 1);
             write_int(AMBER_LED_FILE, 0);
+            write_int(BLUE_LED_FILE, 0);
             break;
         case LED_BLANK:
             write_int(AMBER_BLINK_FILE, 0);
             write_int(GREEN_BLINK_FILE, 0);
+            write_int(BLUE_BLINK_FILE, 0);
             break;
         default:
             ALOGE("set_led_state colorRGB=%08X, unknown color\n", colorRGB);
@@ -128,17 +145,24 @@ static void set_speaker_light_locked(struct light_device_t *dev,
         break;
     case LIGHT_FLASH_NONE:
         switch (color) {
+        case LED_BLUE:
+            write_int(AMBER_LED_FILE, 0);
+            write_int(GREEN_LED_FILE, 0);
+            write_int(BLUE_LED_FILE, 1);
         case LED_AMBER:
             write_int(AMBER_LED_FILE, 1);
             write_int(GREEN_LED_FILE, 0);
+            write_int(BLUE_LED_FILE, 0);
             break;
         case LED_GREEN:
             write_int(AMBER_LED_FILE, 0);
             write_int(GREEN_LED_FILE, 1);
+            write_int(BLUE_LED_FILE, 0);
             break;
         case LED_BLANK:
             write_int(AMBER_LED_FILE, 0);
             write_int(GREEN_LED_FILE, 0);
+            write_int(BLUE_LED_FILE, 0);
             break;
         }
         break;
