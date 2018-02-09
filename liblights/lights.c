@@ -102,17 +102,28 @@ static int is_lit(struct light_state_t const* state)
     return state->color & 0x00ffffff;
 }
 
+static void reset_speaker_light_locked(void)
+{
+    write_int(GREEN_LED_FILE, 0);
+    write_int(GREEN_BLINK_FILE, 0);
+    write_int(AMBER_LED_FILE, 0);
+    write_int(AMBER_BLINK_FILE, 0);
+    write_int(BLUE_LED_FILE, 0);
+    write_int(BLUE_BLINK_FILE, 0);
+}
+
 static void set_speaker_light_locked(struct light_device_t *dev,
         struct light_state_t *state)
 {
-    unsigned int colorRGB = state->color & 0xFFFFFF;
     unsigned int color = LED_BLANK;
 
-    if ((colorRGB >> 8) & 0xFF)
+    reset_speaker_light_locked();
+
+    if ((state->color >> 8) & 0xFF)
         color = LED_GREEN;
-    if ((colorRGB >> 16) & 0xFF)
+    if ((state->color >> 16) & 0xFF)
         color = LED_AMBER;
-    if (colorRGB & 0xFF)
+    if (state->color & 0xFF)
         color = LED_BLUE;
 
     switch (state->flashMode) {
@@ -120,54 +131,37 @@ static void set_speaker_light_locked(struct light_device_t *dev,
         switch (color) {
         case LED_BLUE:
             write_int(BLUE_BLINK_FILE, 4);
-            write_int(GREEN_LED_FILE, 0);
-            write_int(AMBER_LED_FILE, 0);
             break;
         case LED_AMBER:
             write_int(AMBER_BLINK_FILE, 4);
-            write_int(GREEN_LED_FILE, 0);
-            write_int(BLUE_LED_FILE, 0);
             break;
         case LED_GREEN:
             write_int(GREEN_BLINK_FILE, 1);
-            write_int(AMBER_LED_FILE, 0);
-            write_int(BLUE_LED_FILE, 0);
             break;
         case LED_BLANK:
-            write_int(AMBER_BLINK_FILE, 0);
-            write_int(GREEN_BLINK_FILE, 0);
-            write_int(BLUE_BLINK_FILE, 0);
             break;
         default:
-            ALOGE("set_led_state colorRGB=%08X, unknown color\n", colorRGB);
+            ALOGE("set_led_state color=%08X, unknown color\n", state->color);
             break;
         }
         break;
     case LIGHT_FLASH_NONE:
         switch (color) {
         case LED_BLUE:
-            write_int(AMBER_LED_FILE, 0);
-            write_int(GREEN_LED_FILE, 0);
             write_int(BLUE_LED_FILE, 1);
+            break;
         case LED_AMBER:
             write_int(AMBER_LED_FILE, 1);
-            write_int(GREEN_LED_FILE, 0);
-            write_int(BLUE_LED_FILE, 0);
             break;
         case LED_GREEN:
-            write_int(AMBER_LED_FILE, 0);
             write_int(GREEN_LED_FILE, 1);
-            write_int(BLUE_LED_FILE, 0);
             break;
         case LED_BLANK:
-            write_int(AMBER_LED_FILE, 0);
-            write_int(GREEN_LED_FILE, 0);
-            write_int(BLUE_LED_FILE, 0);
             break;
         }
         break;
     default:
-        ALOGE("set_led_state colorRGB=%08X, unknown mode %d\n", colorRGB,
+        ALOGE("set_led_state color=%08X, unknown mode %d\n", state->color,
                 state->flashMode);
     }
 }
@@ -175,24 +169,16 @@ static void set_speaker_light_locked(struct light_device_t *dev,
 static void set_speaker_light_locked_dual(struct light_device_t *dev,
         struct light_state_t *bstate, struct light_state_t *nstate)
 {
-    unsigned int bcolorRGB = bstate->color & 0xFFFFFF;
-    unsigned int bcolor = LED_BLANK;
-
-    if ((bcolorRGB >> 8) & 0xFF)
-        bcolor = LED_GREEN;
-    if ((bcolorRGB >> 16) & 0xFF)
-        bcolor = LED_AMBER;
-
-    if (bcolor == LED_AMBER) {
+    if (bstate->color & 0xFFFF00) {
+        reset_speaker_light_locked();
         write_int(GREEN_LED_FILE, 1);
-        write_int(AMBER_BLINK_FILE, 4);
-    } else if (bcolor == LED_GREEN) {
-        write_int(GREEN_LED_FILE, 1);
-        write_int(AMBER_BLINK_FILE, 1);
+        if (bstate->color & 0xFF0000)
+            write_int(AMBER_BLINK_FILE, 4);
+        else
+            write_int(AMBER_BLINK_FILE, 1);
     } else
-        ALOGE("set_led_state (dual) unexpected color: bcolorRGB=%08x\n", bcolorRGB);
+        ALOGE("set_led_state (dual) unexpected color: %08x\n", bstate->color);
 }
-
 
 static void handle_speaker_battery_locked(struct light_device_t *dev)
 {
