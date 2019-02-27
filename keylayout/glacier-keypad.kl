@@ -5,7 +5,7 @@ key 231   CALL
 key 211   FOCUS
 key 212   CAMERA
 key 217   SEARCH
-key 183   SEARCH
+key 183   ASSIST
 
 key 107   ENDCALL           WAKE_DROPPED
 key 116   POWER             WAKE_DROPPED
